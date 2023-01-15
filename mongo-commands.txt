@@ -1,0 +1,4 @@
+mongo cli:
+
+=> show dbs
+=> use catalogDb
