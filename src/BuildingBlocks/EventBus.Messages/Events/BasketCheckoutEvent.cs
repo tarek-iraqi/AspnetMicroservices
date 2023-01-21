@@ -1,10 +1,7 @@
-﻿using MediatR;
+﻿namespace EventBus.Messages.Events;
 
-namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder;
-
-public record CheckoutOrderCommand : IRequest<int>
+public class BasketCheckoutEvent : IntegrationBaseEvent
 {
-    public int Id { get; set; }
     public string? UserName { get; set; }
     public decimal TotalPrice { get; set; }
 
