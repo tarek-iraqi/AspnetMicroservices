@@ -161,3 +161,20 @@ services:
     ports:
       - "8014:80"
 
+  elasticsearch:
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+    ports:
+      - "9200:9200"
+
+  kibana:
+    container_name: kibana
+    depends_on:
+      - elasticsearch
+    ports:
+      - "5601:5601" 
+
